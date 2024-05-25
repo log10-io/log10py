@@ -1,0 +1,27 @@
+speakeasyVersion: 1.296.1
+sources:
+    default:
+        sourceNamespace: default
+        sourceRevisionDigest: sha256:c5dac52dda8ea676f42d99e8ed3f5d84c17d17c738d5dab93af7e2d759d1d76d
+        sourceBlobDigest: sha256:ecad176fb44b269bf0c8cfdb819080f45147740db62a767b7bfe8ff4c1b1fd7c
+        tags:
+            - latest
+targets:
+    my-first-target:
+        source: default
+        sourceNamespace: default
+        sourceRevisionDigest: sha256:c5dac52dda8ea676f42d99e8ed3f5d84c17d17c738d5dab93af7e2d759d1d76d
+        sourceBlobDigest: sha256:ecad176fb44b269bf0c8cfdb819080f45147740db62a767b7bfe8ff4c1b1fd7c
+        outLocation: /Users/niklasqnielsen/workspace/log10/log10py
+workflow:
+    workflowVersion: 1.0.0
+    sources:
+        default:
+            inputs:
+                - location: openapi.yaml
+            registry:
+                location: registry.speakeasyapi.dev/log10/log10/default
+    targets:
+        my-first-target:
+            target: python
+            source: default
