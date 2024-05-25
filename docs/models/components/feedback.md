@@ -1,0 +1,14 @@
+# Feedback
+
+
+## Fields
+
+| Field                                                                        | Type                                                                         | Required                                                                     | Description                                                                  |
+| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| `task_id`                                                                    | *str*                                                                        | :heavy_check_mark:                                                           | The unique identifier for the task associated with this feedback.            |
+| `json_values`                                                                | [components.JSONValues](../../models/components/jsonvalues.md)               | :heavy_check_mark:                                                           | The values of the feedback. Must be valid JSON according to the task schema. |
+| `matched_completion_ids`                                                     | List[*str*]                                                                  | :heavy_check_mark:                                                           | The matched completion ids associated with this feedback.                    |
+| `comment`                                                                    | *str*                                                                        | :heavy_check_mark:                                                           | The comment associated with this feedback.                                   |
+| `id`                                                                         | *Optional[str]*                                                              | :heavy_minus_sign:                                                           | The unique identifier for this feedback.                                     |
+| `created_at_ms`                                                              | *Optional[float]*                                                            | :heavy_minus_sign:                                                           | The epoch this schema was created.                                           |
+| `completions_summary`                                                        | *Optional[str]*                                                              | :heavy_minus_sign:                                                           | N/A                                                                          |
