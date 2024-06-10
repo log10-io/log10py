@@ -3,15 +3,17 @@ id: 2a6c8ff2-6c9d-4fc5-a507-95a5d089b5af
 management:
   docChecksum: 5e7cc152f137f5919734cc70b836a4d6
   docVersion: 1.0.0
-  speakeasyVersion: 1.296.1
-  generationVersion: 2.338.1
-  releaseVersion: 0.0.1
-  configChecksum: 487271216a48e050d4190586db2ed9c4
+  speakeasyVersion: 1.300.1
+  generationVersion: 2.339.1
+  releaseVersion: 0.0.2
+  configChecksum: a59381478c66265ffe3b9991a01312cb
+  repoURL: https://github.com/log10-io/log10py.git
+  installationURL: https://github.com/log10-io/log10py.git
 features:
   python:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.3
-    core: 4.6.8
+    core: 4.6.9
     deprecations: 2.81.1
     examples: 2.81.3
     flattening: 2.81.1
