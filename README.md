@@ -20,7 +20,7 @@ It has been generated successfully based on your OpenAPI spec. However, it is no
 ## SDK Installation
 
 ```bash
-pip install git+<UNSET>.git
+pip install git+https://github.com/log10-io/log10py.git
 ```
 <!-- End SDK Installation [installation] -->
 
@@ -34,7 +34,6 @@ import log10
 
 s = log10.Log10(
     log10_token="<YOUR_API_KEY_HERE>",
-    x_log10_organization='<value>',
 )
 
 
@@ -76,18 +75,18 @@ if res.object is not None:
 <!-- Start Global Parameters [global-parameters] -->
 ## Global Parameters
 
-A parameter is configured globally. This parameter must be set on the SDK client instance itself during initialization. When configured as an option during SDK initialization, This global value will be used as the default on the operations that use it. When such operations are called, there is a place in each to override the global value, if needed.
+A parameter is configured globally. This parameter may be set on the SDK client instance itself during initialization. When configured as an option during SDK initialization, This global value will be used as the default on the operations that use it. When such operations are called, there is a place in each to override the global value, if needed.
 
 For example, you can set `X-Log10-Organization` to `'<value>'` at SDK initialization and then you do not have to pass the same value on calls to operations like `update`. But if you want to do so you may, which will locally override the global setting. See the example code below for a demonstration.
 
 
 ### Available Globals
 
-The following global parameter is available. The required parameter must be set when you initialize the SDK client.
+The following global parameter is available.
 
 | Name | Type | Required | Description |
 | ---- | ---- |:--------:| ----------- |
-| x_log10_organization | str | ✔️ | The x_log10_organization parameter. |
+| x_log10_organization | str |  | The x_log10_organization parameter. |
 
 
 ### Example
@@ -98,7 +97,6 @@ from log10.models import components
 
 s = log10.Log10(
     log10_token="<YOUR_API_KEY_HERE>",
-    x_log10_organization='<value>',
 )
 
 
@@ -147,7 +145,6 @@ from log10.models import components, errors
 
 s = log10.Log10(
     log10_token="<YOUR_API_KEY_HERE>",
-    x_log10_organization='<value>',
 )
 
 res = None
@@ -202,7 +199,6 @@ from log10.models import components
 s = log10.Log10(
     server_idx=0,
     log10_token="<YOUR_API_KEY_HERE>",
-    x_log10_organization='<value>',
 )
 
 
@@ -242,7 +238,6 @@ from log10.models import components
 s = log10.Log10(
     server_url="https://log10.io",
     log10_token="<YOUR_API_KEY_HERE>",
-    x_log10_organization='<value>',
 )
 
 
@@ -306,7 +301,6 @@ from log10.models import components
 
 s = log10.Log10(
     log10_token="<YOUR_API_KEY_HERE>",
-    x_log10_organization='<value>',
 )
 
 

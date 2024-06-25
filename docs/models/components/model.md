@@ -5,15 +5,15 @@ ID of the model to use. See the [model endpoint compatibility](/docs/models/mode
 
 ## Supported Types
 
-### 
+### `str`
 
 ```python
-model: str = /* values here */
+value: str = /* values here */
 ```
 
-### Two
+### `components.Two`
 
 ```python
-model: components.Two = /* values here */
+value: components.Two = /* values here */
 ```
 

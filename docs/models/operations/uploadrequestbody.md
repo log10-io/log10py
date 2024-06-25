@@ -3,15 +3,15 @@
 
 ## Supported Types
 
-### One
+### `operations.One`
 
 ```python
-uploadRequestBody: operations.One = /* values here */
+value: operations.One = /* values here */
 ```
 
-### Two
+### `operations.Two`
 
 ```python
-uploadRequestBody: operations.Two = /* values here */
+value: operations.Two = /* values here */
 ```
 

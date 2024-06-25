@@ -3,15 +3,15 @@
 
 ## Supported Types
 
-### ChatCompletionRequestMessageContentPartText
+### `components.ChatCompletionRequestMessageContentPartText`
 
 ```python
-chatCompletionRequestMessageContentPart: components.ChatCompletionRequestMessageContentPartText = /* values here */
+value: components.ChatCompletionRequestMessageContentPartText = /* values here */
 ```
 
-### ChatCompletionRequestMessageContentPartImage
+### `components.ChatCompletionRequestMessageContentPartImage`
 
 ```python
-chatCompletionRequestMessageContentPart: components.ChatCompletionRequestMessageContentPartImage = /* values here */
+value: components.ChatCompletionRequestMessageContentPartImage = /* values here */
 ```
 

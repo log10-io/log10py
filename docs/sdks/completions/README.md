@@ -23,7 +23,6 @@ from log10.models import components
 
 s = log10.Log10(
     log10_token="<YOUR_API_KEY_HERE>",
-    x_log10_organization='<value>',
 )
 
 
@@ -81,7 +80,6 @@ from log10.models import components
 
 s = log10.Log10(
     log10_token="<YOUR_API_KEY_HERE>",
-    x_log10_organization='<value>',
 )
 
 
@@ -141,7 +139,6 @@ import log10
 
 s = log10.Log10(
     log10_token="<YOUR_API_KEY_HERE>",
-    x_log10_organization='<value>',
 )
 
 

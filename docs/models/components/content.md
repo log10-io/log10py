@@ -6,15 +6,15 @@ The contents of the user message.
 
 ## Supported Types
 
-### 
+### `str`
 
 ```python
-content: str = /* values here */
+value: str = /* values here */
 ```
 
-### 
+### `List[components.ChatCompletionRequestMessageContentPart]`
 
 ```python
-content: List[components.ChatCompletionRequestMessageContentPart] = /* values here */
+value: List[components.ChatCompletionRequestMessageContentPart] = /* values here */
 ```
 

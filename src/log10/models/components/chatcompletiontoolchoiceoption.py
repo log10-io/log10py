@@ -12,4 +12,4 @@ class ChatCompletionToolChoiceOption1(str, Enum):
     AUTO = 'auto'
     REQUIRED = 'required'
 
-ChatCompletionToolChoiceOption = Union['ChatCompletionToolChoiceOption1', ChatCompletionNamedToolChoice]
+ChatCompletionToolChoiceOption = Union[ChatCompletionToolChoiceOption1, ChatCompletionNamedToolChoice]

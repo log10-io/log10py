@@ -11,7 +11,7 @@ from typing import List, Optional
 
 @dataclasses.dataclass
 class ListGlobals:
-    x_log10_organization: str = dataclasses.field(metadata={'header': { 'field_name': 'X-Log10-Organization', 'style': 'simple', 'explode': False }})
+    x_log10_organization: Optional[str] = dataclasses.field(default=None, metadata={'header': { 'field_name': 'X-Log10-Organization', 'style': 'simple', 'explode': False }})
     
 
 

@@ -8,8 +8,6 @@ from enum import Enum
 from log10 import utils
 from typing import List, Optional, Union
 
-Content = Union[str, List[ChatCompletionRequestMessageContentPart]]
-
 
 class ChatCompletionRequestUserMessageRole(str, Enum):
     r"""The role of the messages author, in this case `user`."""
@@ -27,3 +25,5 @@ class ChatCompletionRequestUserMessage:
     r"""An optional name for the participant. Provides the model information to differentiate between participants of the same role."""
     
 
+
+Content = Union[str, List[ChatCompletionRequestMessageContentPart]]

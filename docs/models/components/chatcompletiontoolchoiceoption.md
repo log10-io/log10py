@@ -12,15 +12,15 @@ Specifying a particular tool via `{"type": "function", "function": {"name": "my_
 
 ## Supported Types
 
-### ChatCompletionToolChoiceOption1
+### `components.ChatCompletionToolChoiceOption1`
 
 ```python
-chatCompletionToolChoiceOption: components.ChatCompletionToolChoiceOption1 = /* values here */
+value: components.ChatCompletionToolChoiceOption1 = /* values here */
 ```
 
-### ChatCompletionNamedToolChoice
+### `components.ChatCompletionNamedToolChoice`
 
 ```python
-chatCompletionToolChoiceOption: components.ChatCompletionNamedToolChoice = /* values here */
+value: components.ChatCompletionNamedToolChoice = /* values here */
 ```
 
