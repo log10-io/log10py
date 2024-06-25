@@ -3,33 +3,33 @@
 
 ## Supported Types
 
-### ChatCompletionRequestSystemMessage
+### `components.ChatCompletionRequestSystemMessage`
 
 ```python
-chatCompletionRequestMessage: components.ChatCompletionRequestSystemMessage = /* values here */
+value: components.ChatCompletionRequestSystemMessage = /* values here */
 ```
 
-### ChatCompletionRequestUserMessage
+### `components.ChatCompletionRequestUserMessage`
 
 ```python
-chatCompletionRequestMessage: components.ChatCompletionRequestUserMessage = /* values here */
+value: components.ChatCompletionRequestUserMessage = /* values here */
 ```
 
-### ChatCompletionRequestAssistantMessage
+### `components.ChatCompletionRequestAssistantMessage`
 
 ```python
-chatCompletionRequestMessage: components.ChatCompletionRequestAssistantMessage = /* values here */
+value: components.ChatCompletionRequestAssistantMessage = /* values here */
 ```
 
-### ChatCompletionRequestToolMessage
+### `components.ChatCompletionRequestToolMessage`
 
 ```python
-chatCompletionRequestMessage: components.ChatCompletionRequestToolMessage = /* values here */
+value: components.ChatCompletionRequestToolMessage = /* values here */
 ```
 
-### ChatCompletionRequestFunctionMessage
+### `components.ChatCompletionRequestFunctionMessage`
 
 ```python
-chatCompletionRequestMessage: components.ChatCompletionRequestFunctionMessage = /* values here */
+value: components.ChatCompletionRequestFunctionMessage = /* values here */
 ```
 

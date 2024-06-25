@@ -15,15 +15,15 @@ Specifying a particular function via `{"name": "my_function"}` forces the model 
 
 ## Supported Types
 
-### One
+### `components.One`
 
 ```python
-createChatCompletionRequestFunctionCall: components.One = /* values here */
+value: components.One = /* values here */
 ```
 
-### ChatCompletionFunctionCallOption
+### `components.ChatCompletionFunctionCallOption`
 
 ```python
-createChatCompletionRequestFunctionCall: components.ChatCompletionFunctionCallOption = /* values here */
+value: components.ChatCompletionFunctionCallOption = /* values here */
 ```
 

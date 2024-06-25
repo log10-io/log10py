@@ -35,8 +35,6 @@ class Two(str, Enum):
     GPT_3_5_TURBO_0125 = 'gpt-3.5-turbo-0125'
     GPT_3_5_TURBO_16K_0613 = 'gpt-3.5-turbo-16k-0613'
 
-Model = Union[str, 'Two']
-
 
 class CreateChatCompletionRequestType(str, Enum):
     r"""Must be one of `text` or `json_object`."""
@@ -58,15 +56,11 @@ class ResponseFormat:
     
 
 
-Stop = Union[str, List[str]]
-
 
 class One(str, Enum):
     r"""`none` means the model will not call a function and instead generates a message. `auto` means the model can pick between generating a message or calling a function."""
     NONE = 'none'
     AUTO = 'auto'
-
-CreateChatCompletionRequestFunctionCall = Union['One', ChatCompletionFunctionCallOption]
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -165,3 +159,9 @@ class CreateChatCompletionRequest:
     """
     
 
+
+Model = Union[str, Two]
+
+Stop = Union[str, List[str]]
+
+CreateChatCompletionRequestFunctionCall = Union[One, ChatCompletionFunctionCallOption]
