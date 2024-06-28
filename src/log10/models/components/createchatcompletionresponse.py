@@ -8,7 +8,7 @@ from .completionusage import CompletionUsage
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from log10 import utils
-from typing import List, Optional
+from typing import Any, List, Optional
 
 
 class FinishReason(str, Enum):
@@ -68,8 +68,8 @@ class CreateChatCompletionResponse:
     r"""A list of chat completion choices. Can be more than one if `n` is greater than 1."""
     created: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('created') }})
     r"""The Unix timestamp (in seconds) of when the chat completion was created."""
-    model: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('model') }})
-    r"""The model used for the chat completion."""
+    model: Optional[Any] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('model') }})
+    r"""The ID of the [Model](/docs/api-reference/models) to be used to execute this run. If a value is provided here, it will override the model associated with the assistant. If not, the model associated with the assistant will be used."""
     object: Object = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('object') }})
     r"""The object type, which is always `chat.completion`."""
     system_fingerprint: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('system_fingerprint'), 'exclude': lambda f: f is None }})

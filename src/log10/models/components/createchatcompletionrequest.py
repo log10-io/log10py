@@ -11,29 +11,7 @@ from .chatcompletiontoolchoiceoption import ChatCompletionToolChoiceOption
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from log10 import utils
-from typing import Dict, List, Optional, Union
-
-
-class Two(str, Enum):
-    GPT_4_TURBO = 'gpt-4-turbo'
-    GPT_4_TURBO_2024_04_09 = 'gpt-4-turbo-2024-04-09'
-    GPT_4_0125_PREVIEW = 'gpt-4-0125-preview'
-    GPT_4_TURBO_PREVIEW = 'gpt-4-turbo-preview'
-    GPT_4_1106_PREVIEW = 'gpt-4-1106-preview'
-    GPT_4_VISION_PREVIEW = 'gpt-4-vision-preview'
-    GPT_4 = 'gpt-4'
-    GPT_4_0314 = 'gpt-4-0314'
-    GPT_4_0613 = 'gpt-4-0613'
-    GPT_4_32K = 'gpt-4-32k'
-    GPT_4_32K_0314 = 'gpt-4-32k-0314'
-    GPT_4_32K_0613 = 'gpt-4-32k-0613'
-    GPT_3_5_TURBO = 'gpt-3.5-turbo'
-    GPT_3_5_TURBO_16K = 'gpt-3.5-turbo-16k'
-    GPT_3_5_TURBO_0301 = 'gpt-3.5-turbo-0301'
-    GPT_3_5_TURBO_0613 = 'gpt-3.5-turbo-0613'
-    GPT_3_5_TURBO_1106 = 'gpt-3.5-turbo-1106'
-    GPT_3_5_TURBO_0125 = 'gpt-3.5-turbo-0125'
-    GPT_3_5_TURBO_16K_0613 = 'gpt-3.5-turbo-16k-0613'
+from typing import Any, Dict, List, Optional, Union
 
 
 class CreateChatCompletionRequestType(str, Enum):
@@ -69,8 +47,8 @@ class CreateChatCompletionRequest:
     UNSET='__SPEAKEASY_UNSET__'
     messages: List[ChatCompletionRequestMessage] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('messages') }})
     r"""A list of messages comprising the conversation so far. [Example Python code](https://cookbook.openai.com/examples/how_to_format_inputs_to_chatgpt_models)."""
-    model: Model = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('model') }})
-    r"""ID of the model to use. See the [model endpoint compatibility](/docs/models/model-endpoint-compatibility) table for details on which models work with the Chat API."""
+    model: Optional[Any] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('model') }})
+    r"""The ID of the [Model](/docs/api-reference/models) to be used to execute this run. If a value is provided here, it will override the model associated with the assistant. If not, the model associated with the assistant will be used."""
     frequency_penalty: Optional[float] = dataclasses.field(default=0, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('frequency_penalty'), 'exclude': lambda f: f is CreateChatCompletionRequest.UNSET }})
     r"""Number between -2.0 and 2.0. Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model's likelihood to repeat the same line verbatim.
 
@@ -159,8 +137,6 @@ class CreateChatCompletionRequest:
     """
     
 
-
-Model = Union[str, Two]
 
 Stop = Union[str, List[str]]
 

@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 2a6c8ff2-6c9d-4fc5-a507-95a5d089b5af
 management:
-  docChecksum: 5e7cc152f137f5919734cc70b836a4d6
+  docChecksum: aea5a73b9583c0fdf1ec010fc21d74d1
   docVersion: 1.0.0
   speakeasyVersion: 1.315.2
   generationVersion: 2.352.0
-  releaseVersion: 0.0.2
-  configChecksum: 1ea43f39e7915bded7035cab596ebcbe
+  releaseVersion: 0.0.3
+  configChecksum: 7d24120a77b7297dd79d49d2f267c194
   repoURL: https://github.com/log10-io/log10py.git
   installationURL: https://github.com/log10-io/log10py.git
 features:
@@ -60,6 +60,7 @@ generatedFiles:
   - src/log10/models/components/completionusage.py
   - src/log10/models/components/chatcompletiontokenlogprob.py
   - src/log10/models/components/chatcompletionresponsemessage.py
+  - src/log10/models/components/chatcompletionrole.py
   - src/log10/models/components/chatcompletionmessagetoolcall.py
   - src/log10/models/components/createchatcompletionrequest.py
   - src/log10/models/components/chatcompletionfunctions.py
@@ -135,14 +136,12 @@ generatedFiles:
   - docs/models/components/completionusage.md
   - docs/models/components/toplogprobs.md
   - docs/models/components/chatcompletiontokenlogprob.md
-  - docs/models/components/chatcompletionresponsemessagerole.md
   - docs/models/components/chatcompletionresponsemessagefunctioncall.md
   - docs/models/components/chatcompletionresponsemessage.md
+  - docs/models/components/chatcompletionrole.md
   - docs/models/components/chatcompletionmessagetoolcalltype.md
   - docs/models/components/function.md
   - docs/models/components/chatcompletionmessagetoolcall.md
-  - docs/models/components/two.md
-  - docs/models/components/model.md
   - docs/models/components/createchatcompletionrequesttype.md
   - docs/models/components/responseformat.md
   - docs/models/components/stop.md
@@ -161,10 +160,8 @@ generatedFiles:
   - docs/models/components/functionobject.md
   - docs/models/components/chatcompletionstreamoptions.md
   - docs/models/components/chatcompletionrequestmessage.md
-  - docs/models/components/role.md
   - docs/models/components/chatcompletionrequestsystemmessage.md
   - docs/models/components/content.md
-  - docs/models/components/chatcompletionrequestusermessagerole.md
   - docs/models/components/chatcompletionrequestusermessage.md
   - docs/models/components/chatcompletionrequestmessagecontentpart.md
   - docs/models/components/type.md
@@ -173,12 +170,9 @@ generatedFiles:
   - docs/models/components/detail.md
   - docs/models/components/imageurl.md
   - docs/models/components/chatcompletionrequestmessagecontentpartimage.md
-  - docs/models/components/chatcompletionrequestassistantmessagerole.md
   - docs/models/components/functioncall.md
   - docs/models/components/chatcompletionrequestassistantmessage.md
-  - docs/models/components/chatcompletionrequesttoolmessagerole.md
   - docs/models/components/chatcompletionrequesttoolmessage.md
-  - docs/models/components/chatcompletionrequestfunctionmessagerole.md
   - docs/models/components/chatcompletionrequestfunctionmessage.md
   - docs/models/components/httpmetadata.md
   - docs/models/components/session.md

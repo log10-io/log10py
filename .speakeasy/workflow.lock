@@ -2,18 +2,17 @@ speakeasyVersion: 1.315.2
 sources:
     default:
         sourceNamespace: default
-        sourceRevisionDigest: sha256:41aa731304f88f51665a6d2df0200973d5b12e04eec085256eb0f73a81611ae3
-        sourceBlobDigest: sha256:3ec92119b04b5301697a25fc0d890d3aace8103f8d6a26dff33c1d2779237e5b
+        sourceRevisionDigest: sha256:35a4313669fd33facac96e46694f28371fe0b06b814f7b943f6dbd35bd6578c1
+        sourceBlobDigest: sha256:846bd2c00eab1783b135e95fa60168b3725c787156cf5e2a3d50b48cec618007
         tags:
             - latest
-            - main
 targets:
     my-first-target:
         source: default
         sourceNamespace: default
-        sourceRevisionDigest: sha256:41aa731304f88f51665a6d2df0200973d5b12e04eec085256eb0f73a81611ae3
-        sourceBlobDigest: sha256:3ec92119b04b5301697a25fc0d890d3aace8103f8d6a26dff33c1d2779237e5b
-        outLocation: /github/workspace/repo
+        sourceRevisionDigest: sha256:35a4313669fd33facac96e46694f28371fe0b06b814f7b943f6dbd35bd6578c1
+        sourceBlobDigest: sha256:846bd2c00eab1783b135e95fa60168b3725c787156cf5e2a3d50b48cec618007
+        outLocation: /Users/niklasqnielsen/workspace/log10/log10py
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest

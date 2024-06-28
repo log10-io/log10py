@@ -2,15 +2,10 @@
 
 from __future__ import annotations
 import dataclasses
+from .chatcompletionrole import ChatCompletionRole
 from dataclasses_json import Undefined, dataclass_json
-from enum import Enum
 from log10 import utils
 from typing import Optional
-
-
-class Role(str, Enum):
-    r"""The role of the messages author, in this case `system`."""
-    SYSTEM = 'system'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -18,8 +13,8 @@ class Role(str, Enum):
 class ChatCompletionRequestSystemMessage:
     content: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('content') }})
     r"""The contents of the system message."""
-    role: Role = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('role') }})
-    r"""The role of the messages author, in this case `system`."""
+    role: ChatCompletionRole = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('role') }})
+    r"""The role of the author of a message"""
     name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name'), 'exclude': lambda f: f is None }})
     r"""An optional name for the participant. Provides the model information to differentiate between participants of the same role."""
     

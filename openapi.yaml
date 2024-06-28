@@ -63,10 +63,14 @@ components:
         - json_values
         - matched_completion_ids
         - comment
+        - organization_id
       properties:
         id:
           type: string
           description: The unique identifier for this feedback.
+        organization_id:
+          type: string
+          description: The unique identifier for the organization.
         created_at_ms:
           type: number
           description: The epoch this schema was created.

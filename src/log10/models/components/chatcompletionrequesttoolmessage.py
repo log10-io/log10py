@@ -2,21 +2,16 @@
 
 from __future__ import annotations
 import dataclasses
+from .chatcompletionrole import ChatCompletionRole
 from dataclasses_json import Undefined, dataclass_json
-from enum import Enum
 from log10 import utils
-
-
-class ChatCompletionRequestToolMessageRole(str, Enum):
-    r"""The role of the messages author, in this case `tool`."""
-    TOOL = 'tool'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class ChatCompletionRequestToolMessage:
-    role: ChatCompletionRequestToolMessageRole = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('role') }})
-    r"""The role of the messages author, in this case `tool`."""
+    role: ChatCompletionRole = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('role') }})
+    r"""The role of the author of a message"""
     content: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('content') }})
     r"""The contents of the tool message."""
     tool_call_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tool_call_id') }})

@@ -3,15 +3,10 @@
 from __future__ import annotations
 import dataclasses
 from .chatcompletionmessagetoolcall import ChatCompletionMessageToolCall
+from .chatcompletionrole import ChatCompletionRole
 from dataclasses_json import Undefined, dataclass_json
-from enum import Enum
 from log10 import utils
 from typing import List, Optional
-
-
-class ChatCompletionRequestAssistantMessageRole(str, Enum):
-    r"""The role of the messages author, in this case `assistant`."""
-    ASSISTANT = 'assistant'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -33,8 +28,8 @@ class FunctionCall:
 @dataclasses.dataclass
 class ChatCompletionRequestAssistantMessage:
     UNSET='__SPEAKEASY_UNSET__'
-    role: ChatCompletionRequestAssistantMessageRole = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('role') }})
-    r"""The role of the messages author, in this case `assistant`."""
+    role: ChatCompletionRole = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('role') }})
+    r"""The role of the author of a message"""
     content: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('content'), 'exclude': lambda f: f is ChatCompletionRequestAssistantMessage.UNSET }})
     r"""The contents of the assistant message. Required unless `tool_calls` or `function_call` is specified."""
     name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name'), 'exclude': lambda f: f is None }})
