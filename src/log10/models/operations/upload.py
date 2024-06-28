@@ -26,6 +26,8 @@ class RequestBodyJSONValues:
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class Two:
+    organization_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('organization_id') }})
+    r"""The unique identifier for the organization."""
     task_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('task_id') }})
     r"""The unique identifier for the task associated with this feedback."""
     json_values: RequestBodyJSONValues = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('json_values') }})
@@ -55,6 +57,8 @@ class JSONValues:
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class One:
+    organization_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('organization_id') }})
+    r"""The unique identifier for the organization."""
     task_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('task_id') }})
     r"""The unique identifier for the task associated with this feedback."""
     json_values: JSONValues = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('json_values') }})
