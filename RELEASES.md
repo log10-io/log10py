@@ -9,3 +9,13 @@ Based on:
 - Speakeasy CLI 1.315.2 (2.352.0) https://github.com/speakeasy-api/speakeasy
 ### Generated
 - [python v0.0.2] .
+
+## 2024-07-17 00:04:03
+### Changes
+Based on:
+- OpenAPI Doc  
+- Speakeasy CLI 1.337.1 (2.373.2) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v0.1.0] .
+### Releases
+- [PyPI v0.1.0] https://pypi.org/project/log10py/0.1.0 - .

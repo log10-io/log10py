@@ -3,17 +3,18 @@ id: 2a6c8ff2-6c9d-4fc5-a507-95a5d089b5af
 management:
   docChecksum: aea5a73b9583c0fdf1ec010fc21d74d1
   docVersion: 1.0.0
-  speakeasyVersion: 1.315.2
-  generationVersion: 2.352.0
-  releaseVersion: 0.0.3
-  configChecksum: 7d24120a77b7297dd79d49d2f267c194
+  speakeasyVersion: 1.337.1
+  generationVersion: 2.373.2
+  releaseVersion: 0.1.0
+  configChecksum: 5ec210e15b6a4f2b92bfc977acd7e85c
   repoURL: https://github.com/log10-io/log10py.git
   installationURL: https://github.com/log10-io/log10py.git
+  published: true
 features:
   python:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.3
-    core: 4.6.13
+    core: 4.8.2
     deprecations: 2.81.1
     examples: 2.81.3
     flattening: 2.81.1
@@ -193,3 +194,4 @@ generatedFiles:
   - src/log10/_hooks/sdkhooks.py
   - src/log10/_hooks/types.py
   - src/log10/_hooks/__init__.py
+  - CONTRIBUTING.md

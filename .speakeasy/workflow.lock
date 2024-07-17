@@ -1,18 +1,19 @@
-speakeasyVersion: 1.315.2
+speakeasyVersion: 1.337.1
 sources:
     default:
         sourceNamespace: default
-        sourceRevisionDigest: sha256:35a4313669fd33facac96e46694f28371fe0b06b814f7b943f6dbd35bd6578c1
-        sourceBlobDigest: sha256:846bd2c00eab1783b135e95fa60168b3725c787156cf5e2a3d50b48cec618007
+        sourceRevisionDigest: sha256:5da4021f6036b0be1a204b4dcec6332ae1ccc6136ac3b77e44cf6abe673883c3
+        sourceBlobDigest: sha256:d1e010919c08f597168ae1e22e619e4158f3c8e600ddebb3f3c2855834d8d590
         tags:
             - latest
+            - main
 targets:
     my-first-target:
         source: default
         sourceNamespace: default
-        sourceRevisionDigest: sha256:35a4313669fd33facac96e46694f28371fe0b06b814f7b943f6dbd35bd6578c1
-        sourceBlobDigest: sha256:846bd2c00eab1783b135e95fa60168b3725c787156cf5e2a3d50b48cec618007
-        outLocation: /Users/niklasqnielsen/workspace/log10/log10py
+        sourceRevisionDigest: sha256:5da4021f6036b0be1a204b4dcec6332ae1ccc6136ac3b77e44cf6abe673883c3
+        sourceBlobDigest: sha256:d1e010919c08f597168ae1e22e619e4158f3c8e600ddebb3f3c2855834d8d590
+        outLocation: /github/workspace/repo
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
@@ -26,3 +27,6 @@ workflow:
         my-first-target:
             target: python
             source: default
+            publish:
+                pypi:
+                    token: $pypi_token
