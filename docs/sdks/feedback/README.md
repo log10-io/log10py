@@ -21,11 +21,11 @@ Fetch feedback by id.
 import log10
 
 s = log10.Log10(
-    log10_token="<YOUR_API_KEY_HERE>",
+    log10_token='<YOUR_API_KEY_HERE>',
 )
 
 
-res = s.feedback.get(feedback_id='<value>', x_log10_organization='<value>')
+res = s.feedback.get(feedback_id='<id>', x_log10_organization='<value>')
 
 if res.feedback is not None:
     # handle response
@@ -40,15 +40,15 @@ if res.feedback is not None:
 | `feedback_id`             | *str*                     | :heavy_check_mark:        | The feedback id to fetch. |
 | `x_log10_organization`    | *Optional[str]*           | :heavy_minus_sign:        | N/A                       |
 
-
 ### Response
 
 **[operations.GetResponse](../../models/operations/getresponse.md)**
+
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## list
 
@@ -58,14 +58,13 @@ List feedback
 
 ```python
 import log10
-from log10.models import operations
 
 s = log10.Log10(
-    log10_token="<YOUR_API_KEY_HERE>",
+    log10_token='<YOUR_API_KEY_HERE>',
 )
 
 
-res = s.feedback.list(x_log10_organization='<value>', request_body=operations.ListRequestBody())
+res = s.feedback.list(x_log10_organization='<value>')
 
 if res.object is not None:
     # handle response
@@ -80,15 +79,15 @@ if res.object is not None:
 | `x_log10_organization`                                                             | *Optional[str]*                                                                    | :heavy_minus_sign:                                                                 | N/A                                                                                |
 | `request_body`                                                                     | [Optional[operations.ListRequestBody]](../../models/operations/listrequestbody.md) | :heavy_minus_sign:                                                                 | N/A                                                                                |
 
-
 ### Response
 
 **[operations.ListResponse](../../models/operations/listresponse.md)**
+
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## upload
 
@@ -101,21 +100,24 @@ import log10
 from log10.models import operations
 
 s = log10.Log10(
-    log10_token="<YOUR_API_KEY_HERE>",
+    log10_token='<YOUR_API_KEY_HERE>',
 )
 
 
 res = s.feedback.upload(request_body=operations.One(
-    organization_id='<value>',
-    task_id='<value>',
+    organization_id='<id>',
+    task_id='<id>',
     json_values=operations.JSONValues(),
     matched_completion_ids=[
         '<value>',
+        '<value>',
     ],
-    comment='The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality',
+    comment='The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design',
     completion_tags_selector=[
         '<value>',
     ],
+    allow_unmatched_feedback=False,
+    max_matched_completions=100,
 ), x_log10_organization='<value>')
 
 if res.feedback is not None:
@@ -131,12 +133,12 @@ if res.feedback is not None:
 | `request_body`                                                               | [operations.UploadRequestBody](../../models/operations/uploadrequestbody.md) | :heavy_check_mark:                                                           | N/A                                                                          |
 | `x_log10_organization`                                                       | *Optional[str]*                                                              | :heavy_minus_sign:                                                           | N/A                                                                          |
 
-
 ### Response
 
 **[operations.UploadResponse](../../models/operations/uploadresponse.md)**
+
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |

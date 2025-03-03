@@ -3,7 +3,7 @@
 import log10
 
 s = log10.Log10(
-    log10_token="<YOUR_API_KEY_HERE>",
+    log10_token='<YOUR_API_KEY_HERE>',
 )
 
 

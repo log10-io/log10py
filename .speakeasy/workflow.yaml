@@ -13,3 +13,9 @@ targets:
         publish:
             pypi:
                 token: $pypi_token
+        codeSamples:
+            registry:
+                location: registry.speakeasyapi.dev/log10/log10/default-python-code-samples
+            labelOverride:
+                fixedValue: Python (SDK)
+            blocking: false

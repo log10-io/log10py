@@ -21,7 +21,7 @@ List feedback tasks.
 import log10
 
 s = log10.Log10(
-    log10_token="<YOUR_API_KEY_HERE>",
+    log10_token='<YOUR_API_KEY_HERE>',
 )
 
 
@@ -33,15 +33,15 @@ if res.tasks is not None:
 
 ```
 
-
 ### Response
 
 **[operations.ListFeedbackTasksResponse](../../models/operations/listfeedbacktasksresponse.md)**
+
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## create
 
@@ -51,19 +51,13 @@ Create a new task.
 
 ```python
 import log10
-from log10.models import components
 
 s = log10.Log10(
-    log10_token="<YOUR_API_KEY_HERE>",
+    log10_token='<YOUR_API_KEY_HERE>',
 )
 
 
-res = s.feedback_tasks.create(request=components.Task(
-    json_schema=components.JSONSchema(),
-    name='<value>',
-    instruction='<value>',
-    completion_tags_selector=components.CompletionTagsSelector(),
-))
+res = s.feedback_tasks.create()
 
 if res.task is not None:
     # handle response
@@ -77,15 +71,15 @@ if res.task is not None:
 | -------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- |
 | `request`                                          | [components.Task](../../models/components/task.md) | :heavy_check_mark:                                 | The request object to use for the request.         |
 
-
 ### Response
 
 **[operations.CreateFeedbackTaskResponse](../../models/operations/createfeedbacktaskresponse.md)**
+
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## get
 
@@ -97,11 +91,11 @@ Retrieves feedback task `taskId`.
 import log10
 
 s = log10.Log10(
-    log10_token="<YOUR_API_KEY_HERE>",
+    log10_token='<YOUR_API_KEY_HERE>',
 )
 
 
-res = s.feedback_tasks.get(task_id='<value>')
+res = s.feedback_tasks.get(task_id='<id>')
 
 if res.task is not None:
     # handle response
@@ -115,12 +109,12 @@ if res.task is not None:
 | --------------------- | --------------------- | --------------------- | --------------------- |
 | `task_id`             | *str*                 | :heavy_check_mark:    | The task id to fetch. |
 
-
 ### Response
 
 **[operations.GetFeedbackTaskResponse](../../models/operations/getfeedbacktaskresponse.md)**
+
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |

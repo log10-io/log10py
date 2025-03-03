@@ -16,8 +16,35 @@ It has been generated successfully based on your OpenAPI spec. However, it is no
 - [ ] 🎁 Publish your SDK to package managers by [configuring automatic publishing](https://www.speakeasyapi.dev/docs/advanced-setup/publish-sdks)
 - [ ] ✨ When ready to productionize, delete this section from the README
 
+<!-- Start Summary [summary] -->
+## Summary
+
+Log10 Feedback API Spec: Log10 Feedback API Spec
+<!-- End Summary [summary] -->
+
+<!-- Start Table of Contents [toc] -->
+## Table of Contents
+<!-- $toc-max-depth=2 -->
+* [log10py](#log10py)
+  * [🏗 **Welcome to your new SDK!** 🏗](#welcome-to-your-new-sdk)
+  * [SDK Installation](#sdk-installation)
+  * [SDK Example Usage](#sdk-example-usage)
+  * [Available Resources and Operations](#available-resources-and-operations)
+  * [Error Handling](#error-handling)
+  * [Server Selection](#server-selection)
+  * [Custom HTTP Client](#custom-http-client)
+  * [Authentication](#authentication)
+* [Development](#development)
+  * [Maturity](#maturity)
+  * [Contributions](#contributions)
+* [log10py](#log10py-1)
+
+<!-- End Table of Contents [toc] -->
+
 <!-- Start SDK Installation [installation] -->
 ## SDK Installation
+
+The SDK can be installed using the *pip* package manager, with dependencies and metadata stored in the `setup.py` file.
 
 ```bash
 pip install log10py
@@ -33,7 +60,7 @@ pip install log10py
 import log10
 
 s = log10.Log10(
-    log10_token="<YOUR_API_KEY_HERE>",
+    log10_token='<YOUR_API_KEY_HERE>',
 )
 
 
@@ -49,15 +76,14 @@ if res.object is not None:
 <!-- Start Available Resources and Operations [operations] -->
 ## Available Resources and Operations
 
+<details open>
+<summary>Available methods</summary>
+
 ### [completions](docs/sdks/completions/README.md)
 
 * [create](docs/sdks/completions/README.md#create) - Create a completion
 * [update](docs/sdks/completions/README.md#update) - Update completion by id.
 * [list_ungraded](docs/sdks/completions/README.md#list_ungraded) - List ungraded completions i.e. completions that have not been associated with feedback but matches task selector.
-
-### [sessions](docs/sdks/sessions/README.md)
-
-* [create](docs/sdks/sessions/README.md#create) - Create a session
 
 ### [feedback](docs/sdks/feedback/README.md)
 
@@ -70,108 +96,34 @@ if res.object is not None:
 * [list](docs/sdks/feedbacktasks/README.md#list) - List feedback tasks.
 * [create](docs/sdks/feedbacktasks/README.md#create) - Create a new task.
 * [get](docs/sdks/feedbacktasks/README.md#get) - Retrieves feedback task `taskId`.
+
+
+### [sessions](docs/sdks/sessions/README.md)
+
+* [create](docs/sdks/sessions/README.md#create) - Create a session
+
+</details>
 <!-- End Available Resources and Operations [operations] -->
-
-<!-- Start Global Parameters [global-parameters] -->
-## Global Parameters
-
-A parameter is configured globally. This parameter may be set on the SDK client instance itself during initialization. When configured as an option during SDK initialization, This global value will be used as the default on the operations that use it. When such operations are called, there is a place in each to override the global value, if needed.
-
-For example, you can set `X-Log10-Organization` to `'<value>'` at SDK initialization and then you do not have to pass the same value on calls to operations like `update`. But if you want to do so you may, which will locally override the global setting. See the example code below for a demonstration.
-
-
-### Available Globals
-
-The following global parameter is available.
-
-| Name | Type | Required | Description |
-| ---- | ---- |:--------:| ----------- |
-| x_log10_organization | str |  | The x_log10_organization parameter. |
-
-
-### Example
-
-```python
-import log10
-from log10.models import components
-
-s = log10.Log10(
-    log10_token="<YOUR_API_KEY_HERE>",
-)
-
-
-res = s.completions.update(completion_id='<value>', completion=components.Completion(
-    organization_id='<value>',
-    request=components.CreateChatCompletionRequest(
-        messages=[
-            components.ChatCompletionRequestFunctionMessage(
-                role=components.ChatCompletionRole.SYSTEM,
-                content='<value>',
-                name='<value>',
-            ),
-        ],
-        model='gpt-4-turbo',
-        n=1,
-        response_format=components.ResponseFormat(
-            type=components.CreateChatCompletionRequestType.JSON_OBJECT,
-        ),
-        temperature=1,
-        top_p=1,
-        user='user-1234',
-    ),
-    response=components.CreateChatCompletionResponse(
-        id='<id>',
-        choices=[
-            components.Choices(
-                finish_reason=components.FinishReason.TOOL_CALLS,
-                index=15652,
-                message=components.ChatCompletionResponseMessage(
-                    content='<value>',
-                    role=components.ChatCompletionRole.USER,
-                ),
-                logprobs=components.Logprobs(
-                    content=[
-                        components.ChatCompletionTokenLogprob(
-                            token='<value>',
-                            logprob=7084.55,
-                            bytes=[
-                                991464,
-                            ],
-                            top_logprobs=[
-                                components.TopLogprobs(
-                                    token='<value>',
-                                    logprob=2703.24,
-                                    bytes=[
-                                        627690,
-                                    ],
-                                ),
-                            ],
-                        ),
-                    ],
-                ),
-            ),
-        ],
-        created=684199,
-        model='gpt-4-turbo',
-        object=components.Object.CHAT_COMPLETION,
-    ),
-), x_log10_organization='<value>')
-
-if res.completion is not None:
-    # handle response
-    pass
-
-```
-<!-- End Global Parameters [global-parameters] -->
 
 <!-- Start Error Handling [errors] -->
 ## Error Handling
 
-Handling errors in this SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
+Handling errors in this SDK should largely match your expectations. All operations return a response object or raise an exception.
 
-| Error Object    | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+By default, an API error will raise a errors.SDKError exception, which has the following properties:
+
+| Property        | Type             | Description           |
+|-----------------|------------------|-----------------------|
+| `.status_code`  | *int*            | The HTTP status code  |
+| `.message`      | *str*            | The error message     |
+| `.raw_response` | *httpx.Response* | The raw HTTP response |
+| `.body`         | *str*            | The response content  |
+
+When custom error responses are specified for an operation, the SDK may also raise their associated exception. You can refer to respective *Errors* tables in SDK docs for more details on possible exception types for each operation. For example, the `create` method may raise the following exceptions:
+
+| Error Type      | Status Code | Content Type |
+| --------------- | ----------- | ------------ |
+| errors.SDKError | 4XX, 5XX    | \*/\*        |
 
 ### Example
 
@@ -180,61 +132,31 @@ import log10
 from log10.models import components, errors
 
 s = log10.Log10(
-    log10_token="<YOUR_API_KEY_HERE>",
+    log10_token='<YOUR_API_KEY_HERE>',
 )
 
 res = None
 try:
     res = s.completions.create(completion=components.Completion(
-    organization_id='<value>',
+    organization_id='<id>',
     request=components.CreateChatCompletionRequest(
         messages=[
-            components.ChatCompletionRequestAssistantMessage(
+            components.ChatCompletionRequestToolMessage(
                 role=components.ChatCompletionRole.ASSISTANT,
+                content='<value>',
+                tool_call_id='<id>',
             ),
         ],
         model='gpt-4-turbo',
-        n=1,
-        response_format=components.ResponseFormat(
-            type=components.CreateChatCompletionRequestType.JSON_OBJECT,
-        ),
-        temperature=1,
-        top_p=1,
+        response_format=components.ResponseFormat(),
         user='user-1234',
     ),
     response=components.CreateChatCompletionResponse(
         id='<id>',
         choices=[
-            components.Choices(
-                finish_reason=components.FinishReason.CONTENT_FILTER,
-                index=859213,
-                message=components.ChatCompletionResponseMessage(
-                    content='<value>',
-                    role=components.ChatCompletionRole.ASSISTANT,
-                ),
-                logprobs=components.Logprobs(
-                    content=[
-                        components.ChatCompletionTokenLogprob(
-                            token='<value>',
-                            logprob=2884.08,
-                            bytes=[
-                                134365,
-                            ],
-                            top_logprobs=[
-                                components.TopLogprobs(
-                                    token='<value>',
-                                    logprob=7865.46,
-                                    bytes=[
-                                        69025,
-                                    ],
-                                ),
-                            ],
-                        ),
-                    ],
-                ),
-            ),
+
         ],
-        created=996706,
+        created=69025,
         model='gpt-4-turbo',
         object=components.Object.CHAT_COMPLETION,
     ),
@@ -254,151 +176,39 @@ if res.any is not None:
 <!-- Start Server Selection [server] -->
 ## Server Selection
 
-### Select Server by Index
-
-You can override the default server globally by passing a server index to the `server_idx: int` optional parameter when initializing the SDK client instance. The selected server will then be used as the default on the operations that use it. This table lists the indexes associated with the available servers:
-
-| # | Server | Variables |
-| - | ------ | --------- |
-| 0 | `https://log10.io` | None |
-
-#### Example
-
-```python
-import log10
-from log10.models import components
-
-s = log10.Log10(
-    server_idx=0,
-    log10_token="<YOUR_API_KEY_HERE>",
-)
-
-
-res = s.completions.create(completion=components.Completion(
-    organization_id='<value>',
-    request=components.CreateChatCompletionRequest(
-        messages=[
-            components.ChatCompletionRequestAssistantMessage(
-                role=components.ChatCompletionRole.ASSISTANT,
-            ),
-        ],
-        model='gpt-4-turbo',
-        n=1,
-        response_format=components.ResponseFormat(
-            type=components.CreateChatCompletionRequestType.JSON_OBJECT,
-        ),
-        temperature=1,
-        top_p=1,
-        user='user-1234',
-    ),
-    response=components.CreateChatCompletionResponse(
-        id='<id>',
-        choices=[
-            components.Choices(
-                finish_reason=components.FinishReason.CONTENT_FILTER,
-                index=859213,
-                message=components.ChatCompletionResponseMessage(
-                    content='<value>',
-                    role=components.ChatCompletionRole.ASSISTANT,
-                ),
-                logprobs=components.Logprobs(
-                    content=[
-                        components.ChatCompletionTokenLogprob(
-                            token='<value>',
-                            logprob=2884.08,
-                            bytes=[
-                                134365,
-                            ],
-                            top_logprobs=[
-                                components.TopLogprobs(
-                                    token='<value>',
-                                    logprob=7865.46,
-                                    bytes=[
-                                        69025,
-                                    ],
-                                ),
-                            ],
-                        ),
-                    ],
-                ),
-            ),
-        ],
-        created=996706,
-        model='gpt-4-turbo',
-        object=components.Object.CHAT_COMPLETION,
-    ),
-), x_log10_organization='<value>')
-
-if res.any is not None:
-    # handle response
-    pass
-
-```
-
-
 ### Override Server URL Per-Client
 
-The default server can also be overridden globally by passing a URL to the `server_url: str` optional parameter when initializing the SDK client instance. For example:
+The default server can be overridden globally by passing a URL to the `server_url: str` optional parameter when initializing the SDK client instance. For example:
 ```python
 import log10
 from log10.models import components
 
 s = log10.Log10(
-    server_url="https://log10.io",
-    log10_token="<YOUR_API_KEY_HERE>",
+    server_url='https://log10.io',
+    log10_token='<YOUR_API_KEY_HERE>',
 )
 
 
 res = s.completions.create(completion=components.Completion(
-    organization_id='<value>',
+    organization_id='<id>',
     request=components.CreateChatCompletionRequest(
         messages=[
-            components.ChatCompletionRequestAssistantMessage(
+            components.ChatCompletionRequestToolMessage(
                 role=components.ChatCompletionRole.ASSISTANT,
+                content='<value>',
+                tool_call_id='<id>',
             ),
         ],
         model='gpt-4-turbo',
-        n=1,
-        response_format=components.ResponseFormat(
-            type=components.CreateChatCompletionRequestType.JSON_OBJECT,
-        ),
-        temperature=1,
-        top_p=1,
+        response_format=components.ResponseFormat(),
         user='user-1234',
     ),
     response=components.CreateChatCompletionResponse(
         id='<id>',
         choices=[
-            components.Choices(
-                finish_reason=components.FinishReason.CONTENT_FILTER,
-                index=859213,
-                message=components.ChatCompletionResponseMessage(
-                    content='<value>',
-                    role=components.ChatCompletionRole.ASSISTANT,
-                ),
-                logprobs=components.Logprobs(
-                    content=[
-                        components.ChatCompletionTokenLogprob(
-                            token='<value>',
-                            logprob=2884.08,
-                            bytes=[
-                                134365,
-                            ],
-                            top_logprobs=[
-                                components.TopLogprobs(
-                                    token='<value>',
-                                    logprob=7865.46,
-                                    bytes=[
-                                        69025,
-                                    ],
-                                ),
-                            ],
-                        ),
-                    ],
-                ),
-            ),
+
         ],
-        created=996706,
+        created=69025,
         model='gpt-4-turbo',
         object=components.Object.CHAT_COMPLETION,
     ),
@@ -434,9 +244,9 @@ s = log10.Log10(client=http_client)
 
 This SDK supports the following security scheme globally:
 
-| Name          | Type          | Scheme        |
-| ------------- | ------------- | ------------- |
-| `log10_token` | apiKey        | API key       |
+| Name          | Type   | Scheme  |
+| ------------- | ------ | ------- |
+| `log10_token` | apiKey | API key |
 
 To authenticate with the API the `log10_token` parameter must be set when initializing the SDK client instance. For example:
 ```python
@@ -444,60 +254,30 @@ import log10
 from log10.models import components
 
 s = log10.Log10(
-    log10_token="<YOUR_API_KEY_HERE>",
+    log10_token='<YOUR_API_KEY_HERE>',
 )
 
 
 res = s.completions.create(completion=components.Completion(
-    organization_id='<value>',
+    organization_id='<id>',
     request=components.CreateChatCompletionRequest(
         messages=[
-            components.ChatCompletionRequestAssistantMessage(
+            components.ChatCompletionRequestToolMessage(
                 role=components.ChatCompletionRole.ASSISTANT,
+                content='<value>',
+                tool_call_id='<id>',
             ),
         ],
         model='gpt-4-turbo',
-        n=1,
-        response_format=components.ResponseFormat(
-            type=components.CreateChatCompletionRequestType.JSON_OBJECT,
-        ),
-        temperature=1,
-        top_p=1,
+        response_format=components.ResponseFormat(),
         user='user-1234',
     ),
     response=components.CreateChatCompletionResponse(
         id='<id>',
         choices=[
-            components.Choices(
-                finish_reason=components.FinishReason.CONTENT_FILTER,
-                index=859213,
-                message=components.ChatCompletionResponseMessage(
-                    content='<value>',
-                    role=components.ChatCompletionRole.ASSISTANT,
-                ),
-                logprobs=components.Logprobs(
-                    content=[
-                        components.ChatCompletionTokenLogprob(
-                            token='<value>',
-                            logprob=2884.08,
-                            bytes=[
-                                134365,
-                            ],
-                            top_logprobs=[
-                                components.TopLogprobs(
-                                    token='<value>',
-                                    logprob=7865.46,
-                                    bytes=[
-                                        69025,
-                                    ],
-                                ),
-                            ],
-                        ),
-                    ],
-                ),
-            ),
+
         ],
-        created=996706,
+        created=69025,
         model='gpt-4-turbo',
         object=components.Object.CHAT_COMPLETION,
     ),
